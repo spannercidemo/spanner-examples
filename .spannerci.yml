@@ -1,7 +1,8 @@
 build_binary:
-    builder: particle photon
-    source: firmware/
-
+    builder: 'particle photon'
+    binary_name: 'app/target/app.bin'
+    script: cd $SPN_BUILDER_SDK && make PLATFORM=photon APPDIR=$SPN_PROJECT_DIR/firmware
+    
 #testing:
 #    script: testing/sample-test-script.py
 #    device_update:

@@ -93,10 +93,14 @@ code_qa:
 
 build_binary:
     pre_flight:
-    builder: particle photon
-    source: firmware/
+    builder: 'particle photon'
+    binary_name: 'app/target/app.bin'
+    script: cd $SPN_BUILDER_SDK && make PLATFORM=photon APPDIR=$SPN_PROJECT_DIR/firmware
     pre_flight:
     post_flight:
+
+## SPN_BUILDER_SDK: SDK directory of the selected builder
+## SPN_PROJECT_DIR: User Directory
 
 testing:
     script: testing/basic-tests/GPIO/read-digital-output/scenario.py
