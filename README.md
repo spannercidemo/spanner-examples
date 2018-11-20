@@ -94,11 +94,12 @@ code_qa:
 build_binary:
     pre_flight:
     builder: 'particle photon'
-    binary_name: 'app/target/app.bin'
+    binary_name: 'firmware/target/firmware.bin'
     script: cd $SPN_BUILDER_SDK && make PLATFORM=photon APPDIR=$SPN_PROJECT_DIR/firmware
     pre_flight:
     post_flight:
 
+## binary_name: Full path of the generated binary file based on the SDK platform's documentation
 ## SPN_BUILDER_SDK: SDK directory of the selected builder
 ## SPN_PROJECT_DIR: User Directory
 
