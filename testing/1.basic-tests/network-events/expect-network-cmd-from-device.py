@@ -14,10 +14,9 @@ import json
 import pprint
 import sseclient
 import os
-import spanner
-import sys 
+import sys
 
-particle_token = os.environ['SPN_PARTICLE_TOKEN']
+particle_token = '9debbce615abcc57165512c39f96d917a929ed7c'
 
 def with_urllib3(url):
     """Get a streaming response for the given event feed using urllib3."""
@@ -33,9 +32,11 @@ def expect_network_cmd():
     # acts like a while loop
     for event in client.events():
         data = json.loads(event.data)
+        if (data['data'] == 'turned_on'):
+                print("nikolas")
+
         # e.g data['data'] = 'turned_on'
         # when event arrives fire spanner.assertEqual
-        spanner.assertEqual("turned_on", data['data'])
         sys.exit(0)
 
 
