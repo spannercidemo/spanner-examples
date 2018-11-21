@@ -1,9 +1,9 @@
-# build_binary:
-#     builder: 'particle photon'
-#     binary_name: 'firmware/target/firmware.bin'
-#     script: cd $SPN_BUILDER_SDK && make PLATFORM=photon APPDIR=$SPN_PROJECT_DIR/firmware
+build_binary:
+    builder: 'particle photon'
+    binary_name: 'firmware/target/firmware.bin'
+    script: cd $SPN_BUILDER_SDK && make PLATFORM=photon APPDIR=$SPN_PROJECT_DIR/firmware
 
-testing:
-   script: testing/2.simple-tests/send-network-cmd-to-toggle-pin.py
+# testing:
+#    script: testing/2.simple-tests/send-network-cmd-to-toggle-pin.py
 #        ota_method: particle
 #        binary: auto
