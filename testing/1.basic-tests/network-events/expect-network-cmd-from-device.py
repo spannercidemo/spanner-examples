@@ -15,6 +15,7 @@ import pprint
 import sseclient
 import os
 import spanner
+import sys 
 
 particle_token = os.environ['SPN_PARTICLE_TOKEN']
 
@@ -35,6 +36,7 @@ def expect_network_cmd():
         # e.g data['data'] = 'turned_on'
         # when event arrives fire spanner.assertEqual
         spanner.assertEqual("turned_on", data['data'])
+        sys.exit(0)
 
 
 if __name__ == "__main__":
