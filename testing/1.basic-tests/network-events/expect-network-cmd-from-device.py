@@ -16,7 +16,7 @@ import sseclient
 import os
 import spanner
 
-particle_token = os.environ['PARTICLE_TOKEN']
+particle_token = os.environ['SPN_PARTICLE_TOKEN']
 
 def with_urllib3(url):
     """Get a streaming response for the given event feed using urllib3."""
