@@ -15,7 +15,7 @@ import pprint
 import sseclient
 import os
 import sys
-import Spanner
+from Spanner import Spanner
 
 particle_token = '9debbce615abcc57165512c39f96d917a929ed7c'
 
