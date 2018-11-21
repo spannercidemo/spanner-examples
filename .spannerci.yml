@@ -5,7 +5,8 @@
 
 testing:
    script: testing/sample-test-script.py
-      env_vars: $IFTTT_API_KEY
+   env_vars: 
+      - $IFTTT_API_KEY
 #     env_vars:
 #         - $SPN_PARTICLE_TOKEN
 #        ota_method: particle
