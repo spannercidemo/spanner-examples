@@ -17,8 +17,8 @@ import time
 from Spanner import Spanner
 from Testboard import Testboard
 
-testboard = Testboard("testboard_name")
-
+# testboard = Testboard("testboard_name")
+testboard = Testboard("MySpannerTester")
 # Our device's 1st Analog Output Pin will be connected to the Testboard's A0,
 # making it our Input Pin 1
 INPUT_PIN_1 = "A0"
