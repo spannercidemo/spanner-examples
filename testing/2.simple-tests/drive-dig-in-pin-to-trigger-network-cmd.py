@@ -16,32 +16,47 @@ import time
 import spanner
 import Device from AWSDevice
 import Testboard
+import Spanner from Spanner
+import os
+import sys
 
 
-device = Device("device_name")
-
-testboard = Testboard("testboard_name")
+testboard = Testboard("MySpannerTester")
 
 # Our Product's Input will be connected the Testboard's Pin D3, making it our
 # Output Pin
 OUTPUT_PIN = "D3"
 
 
+
+particle_token = os.environ['SPN_PARTICLE_TOKEN']
+# particle_token = '9debbce615abcc57165512c39f96d917a929ed7c'
+
+def with_urllib3(url):
+    """Get a streaming response for the given event feed using urllib3."""
+    import urllib3
+    http = urllib3.PoolManager()
+    return http.request('GET', url, preload_content=False)
+
+
 def test_raise_flooding_alarm():
     # set PIN state
-    testboard.digitalWrite(OUTPUT_PIN, HIGH)
+    # testboard.digitalWrite(OUTPUT_PIN, HIGH)
 
     time.sleep(2)
 
-    # Ask spanner to wait for 3 seconds while at the same time checking if we
-    # got a command from the device
-    result = device.waitForCommand(3)
-
-    # Make sure we actually got a command, and we didn't just time out
-    spanner.assertTrue(result.commandReceived)
-    # Double check the name of the command
-    spanner.assertEqual("alarm_triggered", command.name)
-    spanner.assertEqual("water_flooding", command.value)
+    url = 'https://api.particle.io/v1/devices/events?access_token='+particle_token
+    response = with_urllib3(url)  # or with_requests(url)
+    client = sseclient.SSEClient(response)
+        # acts like a while loop
+    for event in client.events():
+        data = json.loads(event.data)
+            # e.g data['data'] = 'turned_on'
+            # when event arrives fire spanner.assertEqual
+        result = data['data']
+        # Double check the name of the command
+        spanner.assertEqual("turned_on", result)
+        sys.exit(0)
 
 
 if __name__ == "__main__":
