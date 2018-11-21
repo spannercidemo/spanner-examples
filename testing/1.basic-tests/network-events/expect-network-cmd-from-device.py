@@ -2,11 +2,11 @@
 # a product's actual usage
 #
 # The goal of this example is to show you how you can expect a network command
-# from your devices through the AWS device communication infrastructure.
+# from your devices.
 #
-# In our particular example, we are only waitinf for a "heartbeat" command which
-# should happen every two seconds, so we should definitely get one if we wait
-# for 3. Of course this would never be a real world example, it's only for
+# In our particular example, we are only wait for a "heartbeat" command
+# through Particle user events.
+# Of course this would never be a real world example, it's only for
 # educational purposes
 
 import time
@@ -14,6 +14,7 @@ import json
 import pprint
 import sseclient
 import os
+import spanner
 
 particle_token = os.environ['PARTICLE_TOKEN']
 
@@ -39,6 +40,3 @@ def expect_network_cmd():
 if __name__ == "__main__":
 
     expect_network_cmd()
-
-
-# NOT READY
