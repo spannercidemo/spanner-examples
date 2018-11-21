@@ -21,16 +21,13 @@ import os
 import sys
 
 
-testboard = Testboard("MySpannerTester")
+testboard = Testboard("testboard_name")
 
 # Our Product's Input will be connected the Testboard's Pin D3, making it our
 # Output Pin
 OUTPUT_PIN = "D3"
 
-
-
 particle_token = os.environ['SPN_PARTICLE_TOKEN']
-# particle_token = '9debbce615abcc57165512c39f96d917a929ed7c'
 
 def with_urllib3(url):
     """Get a streaming response for the given event feed using urllib3."""
@@ -41,7 +38,7 @@ def with_urllib3(url):
 
 def test_raise_flooding_alarm():
     # set PIN state
-    # testboard.digitalWrite(OUTPUT_PIN, HIGH)
+    testboard.digitalWrite(OUTPUT_PIN, HIGH)
 
     time.sleep(2)
 
@@ -51,17 +48,16 @@ def test_raise_flooding_alarm():
         # acts like a while loop
     for event in client.events():
         data = json.loads(event.data)
-            # e.g data['data'] = 'turned_on'
-            # when event arrives fire spanner.assertEqual
-        result = data['data']
+        # e.g data['data'] = 'alarm'
+        # when event arrives fire spanner.assertEqual
+        command = data['data']
         # Double check the name of the command
-        spanner.assertEqual("turned_on", result)
+        spanner.assertEqual("alarm_triggered", command.name)
+        spanner.assertEqual("water_flooding", command.value)
+        
         sys.exit(0)
 
 
 if __name__ == "__main__":
 
     spanner.runTest(test_raise_flooding_alarm())
-
-
-# NOT READY
