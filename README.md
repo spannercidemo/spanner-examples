@@ -105,8 +105,8 @@ build_binary:
 
 testing:
     script: testing/basic-tests/GPIO/read-digital-output/scenario.py
-      env_vars:
-          - $SPN_PARTICLE_TOKEN
+    env_vars:
+        - $SPN_PARTICLE_TOKEN
     device_update:
         devices:
             - $DEVID_1
