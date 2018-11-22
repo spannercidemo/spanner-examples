@@ -93,7 +93,6 @@ code_qa:
     source: firmware/
 
 build_binary:
-    pre_flight:
     builder: 'particle photon'
     binary_name: 'firmware/target/firmware.bin'
     script: cd $SPN_BUILDER_SDK && make PLATFORM=photon APPDIR=$SPN_PROJECT_DIR/firmware
