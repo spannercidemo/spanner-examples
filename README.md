@@ -93,11 +93,11 @@ code_qa:
     source: firmware/
 
 build_binary:
+    pre_flight: echo 'Start of Job'
     builder: 'particle photon'
     binary_name: 'firmware/target/firmware.bin'
     script: cd $SPN_BUILDER_SDK && make PLATFORM=photon APPDIR=$SPN_PROJECT_DIR/firmware
-    pre_flight:
-    post_flight:
+    post_flight: echo 'Finished'
 
 ## binary_name: Full path of the generated binary file based on the SDK platform's documentation
 ## SPN_BUILDER_SDK: SDK directory of the selected builder
