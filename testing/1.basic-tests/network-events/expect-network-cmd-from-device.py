@@ -5,7 +5,7 @@
 # from your devices.
 #
 # In our particular example, we are only wait for a "heartbeat" command
-# through Particle user events.
+# through Particle events.
 # Of course this would never be a real world example, it's only for
 # educational purposes
 
@@ -17,7 +17,7 @@ import os
 import sys
 from Spanner import Spanner
 
-particle_token = '9debbce615abcc57165512c39f96d917a929ed7c'
+particle_token = os.environ['SPN_PARTICLE_TOKEN']
 
 def with_urllib3(url):
     """Get a streaming response for the given event feed using urllib3."""
@@ -35,7 +35,7 @@ def expect_network_cmd():
         data = json.loads(event.data)
         # e.g data['data'] = 'turned_on'
         # when event arrives fire spanner.assertEqual
-        spanner.assertEqual("turned_on", data['data'])
+        spanner.assertEqual("heartbeat", data['data'])
         sys.exit(0)
 
 
