@@ -22,6 +22,7 @@
 #
 
 from Testboard import Testboard
+from Spanner import Spanner
 
 testboard = Testboard("MySpannerTester")
 
