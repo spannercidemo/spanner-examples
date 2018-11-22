@@ -88,15 +88,14 @@ Basically, the `.spannerci.yml` tells Spanner what to do. By default, it runs wi
 You don't need to use all the above stages and stages with no definitions will be ignored. Each stage contains definitions on what to do. A sample `.spannerci.yml` file is shown below:
 
 ```
-code_qa:
+pre_flight: echo "Run as default"
+
+**code_qa**:
     level: basic
     source: firmware/
 
-pre_flight: echo "Run as default"
-
-build_binary:
+**build_binary**:
     pre_flight:
-        - echo $PWD
         - echo "I override the global command of pre_flight"
     builder: 'particle photon'
     binary_name: 'firmware/target/firmware.bin'
@@ -107,7 +106,7 @@ build_binary:
 ## SPN_BUILDER_SDK: SDK directory of the selected builder
 ## SPN_PROJECT_DIR: User Directory
 
-testing:
+**testing**:
     script: testing/basic-tests/GPIO/read-digital-output/scenario.py
     env_vars:
         - $SPN_PARTICLE_TOKEN
