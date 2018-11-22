@@ -6,7 +6,7 @@
 # "water" when the water flooding sensor pin is triggered.
 
 # The goal of this example is to show you how you can receive network commands
-# to your devices through the AWS device communication infrastructure, after
+# to your devices though Particle events, after
 # setting one of the device's environmental inputs.
 #
 # This is one real world example of a very simple functional test you would run
@@ -14,7 +14,6 @@
 
 import time
 import spanner
-import Device from AWSDevice
 import Testboard
 import Spanner from Spanner
 import os
