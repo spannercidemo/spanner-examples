@@ -33,7 +33,7 @@ def expect_network_cmd():
     # acts like a while loop
     for event in client.events():
         data = json.loads(event.data)
-        # e.g data['data'] = 'turned_on'
+        # e.g data['data'] = 'heartbeat'
         # when event arrives fire spanner.assertEqual
         spanner.assertEqual("heartbeat", data['data'])
         sys.exit(0)
