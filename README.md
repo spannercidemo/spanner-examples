@@ -130,8 +130,6 @@ A stage is defined by a list of parameters that define the stage behavior.
 | binary        | Yes | Defines the binary source for OTA updates (auto, URL or repo path) |
 | pre_flight    | No  | Override a set of commands that are executed before stage |
 | post_flight   | No  | Override a set of commands that are executed after stage |
-| on_failure    | No  | Override a set of commands that are executed on failure of stage |
-| on_success    | No  | Override a set of commands that are executed on success of stage |
 
 (1),(2): Please contact us to get a full list of the currently supported device builders and OTA update methods. To get started, make sure to check the [Quick Start Guide](#quick-start-guide) section.
 
