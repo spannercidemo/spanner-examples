@@ -99,7 +99,7 @@ build_binary:
     script: cd $SPN_BUILDER_SDK && make PLATFORM=photon APPDIR=$SPN_PROJECT_DIR/firmware
     post_flight: echo 'Finished'
 
-## binary_name: Full path of the generated binary file based on the SDK platform's documentation
+## binary_name: Path of the generated binary file based on the SDK platform's documentation
 ## SPN_BUILDER_SDK: SDK directory of the selected builder
 ## SPN_PROJECT_DIR: User Directory
 
