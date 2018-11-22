@@ -48,12 +48,11 @@ def test_raise_flooding_alarm():
     for event in client.events():
         data = json.loads(event.data)
         # e.g data['data'] = 'alarm'
-        # when event arrives fire spanner.assertEqual
         command = data['data']
         # Double check the name of the command
         spanner.assertEqual("alarm_triggered", command.name)
         spanner.assertEqual("water_flooding", command.value)
-        
+
         sys.exit(0)
 
 
