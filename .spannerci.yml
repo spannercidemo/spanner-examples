@@ -4,7 +4,7 @@
 #     script: cd $SPN_BUILDER_SDK && make PLATFORM=photon APPDIR=$SPN_PROJECT_DIR/firmware && echo "nikolas"
 
 testing:
-   script: testing/3.complex-tests/measure-power-consumption.py
+   script: testing/1.basic-tests/UART/uart_periph_mock/uart_periph_mock.py
    env_vars: 
        - $IFTTT_API_KEY
        - $SPN_PARTICLE_TOKEN
