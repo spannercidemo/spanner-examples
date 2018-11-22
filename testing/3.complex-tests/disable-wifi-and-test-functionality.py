@@ -57,7 +57,7 @@ def wififoff_toggle_button_toggle_switch():
     # We are turning off the Access Point, so our device will now be in Network
     # Discovery mode. For this case we turn the wifi on by executing the above request.
     # The execute function of spanner library can be used for any post request. 
-    testboard.http("https://maker.ifttt.com/trigger/turn_on/with/key/hgql1kyuQEL-KJfSbP7v0v63TOphPTSLoE5nhxrfFa-")
+    testboard.http("https://maker.ifttt.com/trigger/turn_on/with/key/mxgXDJviKQppOmILEhBNxVqxHQzAKBDuKFZRQC7t3a3")
     time.sleep(10)
 
     # check PIN state, make sure it's OFF
