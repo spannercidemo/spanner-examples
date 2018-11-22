@@ -6,8 +6,8 @@
 testing:
    script: testing/3.complex-tests/measure-power-consumption.py
    env_vars: 
-      - $IFTTT_API_KEY
-      - $SPN_PARTICLE_TOKEN
+       - $IFTTT_API_KEY
+       - $SPN_PARTICLE_TOKEN
 #     env_vars:
 #         - $SPN_PARTICLE_TOKEN
 #        ota_method: particle
