@@ -90,11 +90,11 @@ You don't need to use all the above stages and stages with no definitions will b
 ```
 pre_flight: echo "Run as default"
 
-**code_qa**:
+code_qa:
     level: basic
     source: firmware/
 
-**build_binary**:
+build_binary:
     pre_flight:
         - echo "I override the global command of pre_flight"
     builder: 'particle photon'
@@ -106,7 +106,7 @@ pre_flight: echo "Run as default"
 ## SPN_BUILDER_SDK: SDK directory of the selected builder
 ## SPN_PROJECT_DIR: User Directory
 
-**testing**:
+testing:
     script: testing/basic-tests/GPIO/read-digital-output/scenario.py
     env_vars:
         - $SPN_PARTICLE_TOKEN
