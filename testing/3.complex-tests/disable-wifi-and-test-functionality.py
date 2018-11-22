@@ -24,7 +24,7 @@ import sys
 from Spanner import Spanner
 from Testboard import Testboard
 
-testboard = Testboard("testboard_name")
+testboard = Testboard("MySpannerTester")
 
 # Our device's Output Pin will be connected to the Testboard's D7, making it our
 # Input Pin
