@@ -25,8 +25,7 @@ import time
 from Spanner import Spanner
 from Testboard import Testboard
 
-# testboard = Testboard("testboard_name")
-testboard = Testboard("MySpannerTester")
+testboard = Testboard("testboard_name")
 # Our Testboard's D3 Pin is connected to a power switching circuit that controls
 # the power going to the device. When we toggle it HIGH, the device will be
 # powered, when LOW, the device will shut down
@@ -61,7 +60,6 @@ def measure_power_consumption():
     # measuredPowerConsumption() will return the total power consumption
     # measured in the measuring period, in mAh. Then we use the assertLessThan()
     # function to assert that this is less than the target value of 100.
-    print(str(testboard.measuredPowerConsumption()))
     spanner.assertLessThan(100, testboard.measuredPowerConsumption())
 
 if __name__ == "__main__":
