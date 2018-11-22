@@ -5,7 +5,7 @@
 # responds by toggling one of its pins On of Off based on the command.
 
 # The goal of this example is to show you how you can send a network commands to
-# your devices through the AWS device communication infrastructure, and read a
+# your devices through Particle events, and read a
 # device's output's to verify its response, using our Testboard.
 #
 # This is one real world example of a very simple functional test you would run
@@ -22,7 +22,7 @@ from Testboard import Testboard
 
 ifttt_key = os.environ['IFTTT_API_KEY']
 
-testboard = Testboard("MySpannerTester")
+testboard = Testboard("testboard_name")
 
 # Our device's Output Pin will be connected to the Testboard's D7, making it our
 # Input Pin
