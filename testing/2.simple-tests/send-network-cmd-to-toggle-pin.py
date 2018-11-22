@@ -22,7 +22,7 @@ from Testboard import Testboard
 
 ifttt_key = os.environ['IFTTT_API_KEY']
 
-testboard = Testboard("testboard_name")
+testboard = Testboard("MySpannerTester")
 
 # Our device's Output Pin will be connected to the Testboard's D7, making it our
 # Input Pin
