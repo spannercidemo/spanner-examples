@@ -92,8 +92,12 @@ code_qa:
     level: basic
     source: firmware/
 
+pre_flight: echo "Run as default"
+
 build_binary:
-    pre_flight: echo 'Start of Job'
+    pre_flight:
+        - echo $PWD
+        - echo "I override the global command of pre_flight"
     builder: 'particle photon'
     binary_name: 'firmware/target/firmware.bin'
     script: cd $SPN_BUILDER_SDK && make PLATFORM=photon APPDIR=$SPN_PROJECT_DIR/firmware
