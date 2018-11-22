@@ -35,11 +35,11 @@ def chunks(data, chunk_size):
 
 def char_count_mock():
     Serial = Testboard.Serial
-    my_procedure = testboard.createProcedure('UART').\
+    my_procedure = testboard.createProcedure('UART')
         # Serial setup
-        setup(9600, Serial.DATA_BITS_8 | Serial.STOP_BITS_1 | Serial.PARITY_NO).\
+        setup(9600, Serial.DATA_BITS_8 | Serial.STOP_BITS_1 | Serial.PARITY_NO)
         # Wait for the device 'ready\n' flag to initiate communication
-        doAssertSerialRead('ready\n').\
+        doAssertSerialRead('ready\n')
         doWait(1000)
 
 
@@ -48,7 +48,7 @@ def char_count_mock():
         my_procedure.doSerialWrite(piece)
 
     # Assert read on the text lengths
-    my_procedure.doSerialWrite('\n').\
+    my_procedure.doSerialWrite('\n')
         doAssertSerialRead('%d\n' % (len(LOREM),))
 
     # Execute the mock function
