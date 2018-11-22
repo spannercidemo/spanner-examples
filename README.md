@@ -111,7 +111,7 @@ testing:
         devices:
             - $DEVID_1
             - $DEVID_2
-        ota_method: particle
+        ota_method: 'particle'
         binary: auto
 ```
 
@@ -218,7 +218,7 @@ For this example, a Particle Photon device is required and an active account in 
         device_update:
             devices:
                 - $DEVID_1
-            ota_method: particle
+            ota_method: 'particle'
             binary: auto
     ```
 
