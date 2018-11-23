@@ -4,7 +4,7 @@
 #     script: cd $SPN_BUILDER_SDK && make PLATFORM=photon APPDIR=$SPN_PROJECT_DIR/firmware && echo "nikolas"
 
 testing:
-   script: testing/sample-test-script.py
+   script: testing/1.basic-tests/network-events/send-network-cmd-to-device.py
    env_vars: 
        - $IFTTT_API_KEY
        - $SPN_PARTICLE_TOKEN
