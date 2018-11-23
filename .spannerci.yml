@@ -3,7 +3,7 @@
 #     binary_name: 'firmware/target/firmware.bin'
 #     script: cd $SPN_BUILDER_SDK && make PLATFORM=photon APPDIR=$SPN_PROJECT_DIR/firmware && echo "nikolas"
 testing:
-   script: testing/1.basic-tests/network-events/send-network-cmd-to-device.py
+   script: testing/2.simple-tests/send-network-cmd-to-toggle-pin.py
    env_vars: 
        - $IFTTT_API_KEY
        - $SPN_PARTICLE_TOKEN
