@@ -2,7 +2,6 @@
 #     builder: 'particle photon'
 #     binary_name: 'firmware/target/firmware.bin'
 #     script: cd $SPN_BUILDER_SDK && make PLATFORM=photon APPDIR=$SPN_PROJECT_DIR/firmware && echo "nikolas"
-
 testing:
    script: testing/1.basic-tests/network-events/send-network-cmd-to-device.py
    env_vars: 
